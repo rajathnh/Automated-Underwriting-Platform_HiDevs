@@ -1,23 +1,30 @@
-# Build Your Own AI Clone: Gherman Sparrow Edition
+# AI-Powered Automated Underwriting Platform
 
-This project demonstrates how to build a personalized AI chatbot using Retrieval-Augmented Generation (RAG). The chatbot takes on the persona of Gherman Sparrow from the novel *Lord of the Mysteries* and answers questions based *only* on a provided knowledge base about the character.
-
-The application is built with a Streamlit front-end for user interaction and utilizes Arize Phoenix for real-time tracing and observability of the RAG pipeline.
+This project is a fully functional prototype of an AI-powered platform designed to automate property insurance underwriting. It leverages a powerful multimodal Large Language Model (Groq's Llama 4 Scout) to analyze both textual documents and property images, providing a comprehensive risk assessment based on a configurable set of rules.
 
 
-*(To add your own screenshot: run the app, take a picture, upload to a site like [Imgur](https://imgur.com/upload), get the "Direct Link", and replace the URL above.)*
+*(To add a screenshot: run the app, take a picture, upload to a site like [Imgur](https://imgur.com/upload), get the "Direct Link", and replace the URL above.)*
 
 ## 🚀 Features
 
--   **Interactive Chat Interface**: A simple and clean UI built with Streamlit.
--   **Persona-Driven Responses**: Uses advanced prompt engineering to make the LLM adopt the specific persona of Gherman Sparrow.
--   **Grounded Knowledge**: The AI's knowledge is strictly limited to the provided context, preventing it from using general knowledge and reducing hallucinations.
--   **High-Speed Inference**: Leverages the Groq API with Llama 3 for extremely fast responses.
--   **Full Observability**: Every query is traced using Arize Phoenix, allowing you to inspect the entire RAG chain: the retrieved documents, the final prompt, and the LLM's output.
+-   **Multimodal Analysis**: Processes both PDF appraisal reports (text) and property photos (images) in a single workflow.
+-   **RAG-based Decision Making**: Uses a Retrieval-Augmented Generation (RAG) approach where the AI's final decision is grounded by a user-defined "Insurance Rulebook."
+-   **Configurable Rules**: The underwriting guidelines can be edited directly in the UI, allowing for flexible risk assessment criteria.
+-   **Interactive UI**: A clean and user-friendly interface built with Streamlit for easy file uploads and clear result presentation.
+-   **Blazing Fast Inference**: Powered by the Groq API for near-instant analysis and assessment.
+
+## ⚙️ Technology Stack
+
+-   **Language**: Python
+-   **Web Framework**: Streamlit
+-   **LLM Provider**: Groq
+-   **Multimodal Model**: `meta-llama/llama-4-scout-17b-16e-instruct`
+-   **Core Libraries**: `groq`, `pypdf`, `streamlit`
 
 ## 🛠️ Setup and Installation
 
 Follow these steps to get the application running on your local machine.
+
 
 ### 1. Clone the Repository
 
@@ -69,11 +76,10 @@ This project requires API keys to function. We will store them securely using St
     # .streamlit/secrets.toml
 
     GROQ_API_KEY = "gsk_YourGroqApiKeyHere"
-    ARIZE_API_KEY = "your_arize_api_key_here"
-    ARIZE_SPACE_KEY = "your_arize_space_key_here"
+    
     ```
     -   Get your **Groq API Key** from the [Groq Console](https://console.groq.com/keys).
-    -   Get your **Arize API & Space Keys** from your [Arize Account Settings](https://app.arize.com/account/settings).
+    -   
     ```
 
 ## ▶️ How to Run the Application
